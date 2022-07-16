@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { toast } from 'react-toastify'
 import icon from '../../assets/img/notification-icon.svg'
 import { BASE_URL } from '../../Utils/request'
 import './style.css'
@@ -9,7 +10,7 @@ type Props = {
 
 function hendleClik(id: number) {
   axios(`${BASE_URL}/Sales/${id}/Notification`).then(response => {
-    console.log('SUCESSO')
+    toast.info("SMS enviado com sucesso")
   })
 }
 
